@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public abstract class HogwartsStudent {
+public class HogwartsStudent {
     protected String fullName;
     protected int power;
     protected int transgration;
@@ -11,9 +11,19 @@ public abstract class HogwartsStudent {
         this.power = power;
         this.transgration = transgration;
     }
-    //public abstract void challengeStudent(HogwartsStudent opponent);
+    public void challengeStudent(HogwartsStudent opponent) {
+        if (getSummPower() > opponent.getSummPower()) {
+            System.out.println(fullName + " победил");
+        } else if (getSummPower() < opponent.getSummPower()) {
+            System.out.println(opponent.fullName + " победил");
+        } else {
+            System.out.println("Ничья");
+        }
+    }
 
-    protected abstract int getSummPower ();
+    protected int getSummPower () {
+         return power + transgration;
+    }
 
     public String getFullName() {
         return fullName;

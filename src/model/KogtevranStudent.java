@@ -24,7 +24,7 @@ public class KogtevranStudent extends HogwartsStudent {
         this.wise = wise;
         this.clever = clever;
     }
-    public void challengeStudent(model.KogtevranStudent opponent) {
+    public void challengeStudent(KogtevranStudent opponent) {
         if (this.getSummPower() > opponent.getSummPower()) {
             System.out.println(fullName + " победил");
         } else if (getSummPower() < opponent.getSummPower()) {
